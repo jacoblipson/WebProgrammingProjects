@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fecesbook</title>
+<script>
+	function timestamp(d) {
+		hours = d.getHours();
+		if (hours >= 12 ) {
+			timeofday = "PM";
+		}
+		else {
+		 	timeofday = "AM";
+		}
+		minutes = d.getMinutes();
+		if (minutes < 10 ) {
+			minutes = "0" + minutes;	
+		}	
+		time = (hours + ":" + minutes + " " + timeofday);
+		return time;
+	}
+	
+	function statusUpdate()
+	{
+		status = document.getElementById("msg").value;
+		d = new Date();
+		time = timestamp(d);
+		date = (d.toLocaleDateString());
+		text = date + " " + time + " - " + status;
+		localStorage[new Date().getTime()] = text;
+		addnewstatuses();
+	}
+	
+	function addnewstatuses()
+	{
+		elem = document.getElementById("newsfeed");
+		output = "";
+		for (key in localStorage) {
+			output = "<p>" + localStorage[key] + "</p>\n" + output;
+		}
+		elem.innerHTML = output;
+	}
+	
+</script>
+</head>
+
+<body onload="addnewstatuses()">
+	<h1>Fecebook</h1>
+	<div id="nav">
+		<ul>
+			<li id="home">Home</li>
+			<li id="groups">Groups</li>
+			<li id="profile">Profile</li>
+			<li id="contacts">Contacts</li>
+			<li id="inbox">Inbox</li>
+			<li id="applications">Applications</li>
+		</ul>
+	</div>
+	<h2 id="fullname">Barney Gumble</h2>
+	<p><img src="https://s3.amazonaws.com/tufts-cs-mchow-images/barneymug.gif" alt="profile" /></p>
+	<h3>What are you thinking about? <input onchange="statusUpdate()" type="text" id="msg" name="msg" size="30" /></h3>
+	<h3>Updates</h3>
+	<p id="newsfeed"></p>
+	<div>
+	</div>
+	<div id="yesterday">
+		<h3>Updates from yesterday:</h3>
+		<ul>
+			<li>Alice is now connected to Bob</li>
+			<li>Tom recommends Jerry</li>
+			<li>Harry just returned from a trip from Curaco</li>
+		</ul>
+	</div>
+	<div id="longlongtimeago">
+		<h3>Updates from long long time ago:</h3>
+		<ul>
+			<li>Harry just returned from a trip from Curaco</li>
+			<li>Joan is now connected to Mary</li>
+			<li>Steven is now connected to James</li>
+		</ul>
+	</div>
+</body>
+</html>

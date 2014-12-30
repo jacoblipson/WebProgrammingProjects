@@ -1,0 +1,21 @@
+#sprite {
+	display: none;
+}
+
+body {
+	background-color: gray;
+}
+
+#game {
+	margin-top: 6%;
+	margin-left: 23%;
+}
+
+h1 {
+	font-family: impact;
+	color: white;
+	text-align: center;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+}

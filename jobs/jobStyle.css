@@ -1,0 +1,12 @@
+#list div {
+	border-radius: 12px;
+	background-color: cyan;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 14px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+	border: 3px green solid;
+	box-shadow: 3px 6px 1px #006400;
+
+}

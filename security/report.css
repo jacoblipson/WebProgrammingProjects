@@ -1,0 +1,35 @@
+body {
+	background-color: #DDDDDD;
+}
+
+div h1 {
+	position: relative;
+	text-align: center;
+	background-color: #ED3B83;
+	outline: black solid;
+	width: 100%;
+	margin-top: 0%;
+}
+
+div p {
+	text-align: center;
+	width:98%;
+	background-color: #16DBC4;
+	outline: black solid;
+	padding: 1%;
+}
+
+#med {
+	color: orange;
+	font-weight: 900;
+}
+
+#low {
+	font-weight: 900;
+	color: green;
+}
+
+#high {
+	color: red;
+	font-weight: 900;
+}
